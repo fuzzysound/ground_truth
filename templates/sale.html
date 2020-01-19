@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<img class="img-fluid mb-3" src="{% static 'asset_top2.png' %}">
+<section class="text-center">
+    <div class="container">
+        <h2>매물 보기</h2>
+        <p class="text-muted">
+            인공지능 예측 기술을 통해 엄선된 수익률 높은 매물만을 고집합니다.
+        </p>
+        <p>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> 리스트형
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> 지도형
+            </label>
+        </div>
+        </p>
+    </div>
+</section>
+<div id="asset-list" class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for i in '012345678'|make_list %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="bd-placeholder-img card-img-top">
+                        <img src="{% static 'asset.jpg' %}" width="100%">
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 68%;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" style="font-size:20px; color:#007BFF; margin-bottom:0px;">서울시 마포구 홍익로</p>
+                        <b class="card-text" style="font-size:12px; margin-bottom:16px;">12개월 목표 | 68% 투자 달성</b>
+                        <p class="card-text" style="font-size:16px; color:#007BFF; margin-bottom:0px;">매매가 28억 | 연 15% 수익 예상</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div id="asset-map" style="height:500px;"></div>
+{% endblock %}
+{% block extrascript %}
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=58d98afe50b6cd7e8740acb8e1134ad7"></script>
+    <script src="{% static 'asset_map.js' %}"></script>
+    <script src="{% static 'button_action.js' %}"></script>
+{% endblock %}

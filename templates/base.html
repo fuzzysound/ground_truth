@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Ground Truth</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static "base.css" %}">
+    </head>
+    <body>
+        <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+            <div class="my-0 mr-md-auto font-weight-normal">
+                <a class="logo img-fluid" href="{% url 'mainpage' %}">
+                    <img src="{% static 'logo.png' %}" />
+                </a>
+            </div>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="#">서비스소개</a>
+                <a class="p-2 text-dark" href="{% url 'sale' %}">매물 보기</a>
+                <a class="p-2 text-dark" href="#">지분 거래</a>
+                <a class="p-2 text-dark" href="#">회사 소개</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="#">로그인</a>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="my-5 pt-5 text-center text-small">
+            <hr>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">회원가입약관</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">서비스이용약관</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">개인정보처리방침</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">운영정책</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">공지사항</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">SNS</a>
+                </li>
+            </ul>
+            <hr>
+            <strong class="mb-1">GROUND TRUTH</strong>
+        </footer>
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    {% block extrascript %}
+    {% endblock %}
+    </body>
+</html>
