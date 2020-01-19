@@ -1,0 +1,9 @@
+*/.gitignore
+*.xml
+*.swo
+*.swn
+*.iml
+**/*.pyc
+*.swp
+db.sqlite3
+*/migrations/*
